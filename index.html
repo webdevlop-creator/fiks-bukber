@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Undangan Bukber IKOED</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Poppins:wght@300;400;600&family=Amiri:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+body{background:#0e141b;color:white;overflow-x:hidden}
+
+/* OPENING */
+#opening{
+  position:fixed;
+  inset:0;
+  background:
+  linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+  url('ikoed.jpeg') center center / cover no-repeat fixed;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  z-index:99;
+  transition:opacity 1s ease;
+}
+
+.ramadan-text{
+  font-family:'Amiri',serif;
+  font-size:48px;
+  color:#f5d27a;
+  text-shadow:0 0 20px rgba(212,175,55,.6);
+  margin-bottom:10px;
+}
+
+#opening h2{
+  font-family:Cinzel;
+  font-size:26px;
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+
+#btnBuka{
+  margin-top:30px;
+  padding:12px 28px;
+  background:#d4af37;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+  transition:.3s;
+}
+#btnBuka:hover{
+  background:#f5d27a;
+}
+
+/* KONTEN */
+#konten{
+  display:none;
+  opacity:0;
+  transition:opacity 1s ease;
+}
+
+/* SECTION */
+.section{
+  padding:90px 20px;
+  text-align:center;
+  background:
+  linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+  url('ikoed.jpeg') center center / cover no-repeat fixed;
+}
+
+h2{
+  font-family:Cinzel;
+  color:#f5d27a;
+  margin-bottom:20px;
+}
+
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:20px;
+}
+
+.box{
+  background:#d4af37;
+  color:#000;
+  padding:12px 16px;
+  border-radius:6px;
+  font-weight:600;
+}
+
+input,select{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border-radius:6px;
+  border:none;
+}
+
+button.kirim{
+  margin-top:10px;
+  background:#d4af37;
+  border:none;
+  padding:12px;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+button.kirim:hover{
+  background:#f5d27a;
+}
+
+.hide{display:none}
+
+/* GALERI LANDSCAPE 4 FOTO */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.gallery-grid img{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  border-radius:18px;
+  transition:.3s ease;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.03);
+}
+
+.map iframe{width:100%;height:300px;border:0;border-radius:10px}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING -->
+<div id="opening">
+  <div class="ramadan-text">رمضان كريم</div>
+  <h2>Undangan Bukber IKOED</h2>
+  <p>Kepada Yth. Ikatan Keluarga Oemar Diyan</p>
+  <button id="btnBuka">Buka Undangan</button>
+</div>
+
+<!-- KONTEN -->
+<div id="konten">
+
+<div class="section">
+<h2>Assalamu'alaikum Wr. Wb</h2>
+<p>Dalam rangka mempererat tali silaturahmi</p>
+<p>kami mengundang seluruh Ikatan Keluarga Oemar Diyan</p>
+<p>untuk hadir dalam acara buka bersama</p>
+
+<p style="margin-top:25px;font-weight:600;color:#f5d27a;">
+📍 Pang Sagoe Lhong Raya, Jl. Tengku Dilhong II Dusun Mulia, Lhong Raya, Kec. Banda Raya, Kota Banda Aceh, Aceh 23238
+</p>
+<p>-----</p>
+<p style="font-weight:600;color:#f5d27a;">
+🗓 8 Maret 2026 | 18.50 WIB
+</p>
+</div>
+
+<div class="section">
+<h2>Susunan Acara</h2>
+<p>> Sharing Session</p>
+<p>> Pembukaan</p>
+<p>> Tilawah Al-Qur'an</p>
+<p>> Sambutan</p>
+<p>> Doa</p>
+<p>> Berbuka & Sholat</p>
+<p>> Makan Bersama</p>
+</div>
+
+<div class="section">
+<h2>Menuju Hari H</h2>
+<div class="countdown">
+<div class="box"><span id="h"></span> Hari</div>
+<div class="box"><span id="j"></span> Jam</div>
+<div class="box"><span id="m"></span> Menit</div>
+<div class="box"><span id="d"></span> Detik</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Lokasi Acara</h2>
+<div class="map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d496.40905951139587!2d95.32274126627121!3d5.526532714086015!2m3!1f0!2f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3040390017852b77%3A0xf5a634fccd49c5f6!2sPang%20Sagoe%20Lhong%20Raya!5e0!3m2!1sid!2sid!4v1770989222960!5m2!1sid!2sid"></iframe>
+</div>
+</div>
+
+<div class="section">
+<h2>Galeri Bukber</h2>
+<div class="gallery-grid">
+<img src="ikoed2.jpeg">
+<img src="ikoed4.jpeg">
+<img src="ikoed5.jpeg">
+<img src="ikoed6.jpeg">
+</div>
+</div>
+
+<div class="section">
+<h2>Konfirmasi Kehadiran</h2>
+
+<input id="nama" placeholder="Nama Lengkap">
+<select id="angkatan"></select>
+
+<select id="status">
+<option value="">Datang sendiri atau bersama keluarga</option>
+<option value="sendiri">Sendiri</option>
+<option value="keluarga">Bersama keluarga</option>
+</select>
+
+<input id="jumlah" type="number" placeholder="Jumlah Keluarga" class="hide">
+
+<button class="kirim" id="btnKirim">Kirim Absensi</button>
+</div>
+
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+import { getDatabase, ref, push, runTransaction, get, set }
+from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCJ6-jmJeUoWHuHoK452QnvUEWljoLeTRI",
+  authDomain: "bukber-ikoed-b906a.firebaseapp.com",
+  databaseURL: "https://bukber-ikoed-b906a-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "bukber-ikoed-b906a",
+  storageBucket: "bukber-ikoed-b906a.firebasestorage.app",
+  messagingSenderId: "181847134218",
+  appId: "1:181847134218:web:25beb18d06edc4af688ff3",
+  measurementId: "G-FDCGGHVKLN"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+function getDeviceId(){
+  return btoa(
+    navigator.userAgent +
+    screen.width +
+    screen.height +
+    Intl.DateTimeFormat().resolvedOptions().timeZone
+  );
+}
+
+const opening = document.getElementById("opening");
+const konten = document.getElementById("konten");
+document.getElementById("btnBuka").addEventListener("click",()=>{
+  opening.style.opacity="0";
+  setTimeout(()=>{
+    opening.style.display="none";
+    konten.style.display="block";
+    requestAnimationFrame(()=>konten.style.opacity="1");
+  },1000);
+});
+
+const selectAngkatan=document.getElementById("angkatan");
+selectAngkatan.innerHTML=`<option value="">Pilih Angkatan</option><option value="pengurus">Pengurus</option>`;
+for(let y=2026;y>=1990;y--){
+  selectAngkatan.innerHTML+=`<option value="${y}">${y}</option>`;
+}
+
+const selectStatus=document.getElementById("status");
+const inputJumlah=document.getElementById("jumlah");
+selectStatus.onchange=()=>{
+  inputJumlah.classList.toggle("hide",selectStatus.value!=="keluarga");
+};
+
+document.getElementById("btnKirim").onclick = async () => {
+  try {
+
+    const deviceId = getDeviceId();
+    const deviceRef = ref(db,"devices/"+deviceId);
+    const deviceSnap = await get(deviceRef);
+
+    if(deviceSnap.exists()){
+      alert("Perangkat ini sudah mengisi absensi");
+      return;
+    }
+
+    const nama=document.getElementById("nama").value.trim();
+    const angkatan=selectAngkatan.value;
+    const status=selectStatus.value;
+    const jumlahKeluarga = status==="keluarga" ? Number(inputJumlah.value) : 0;
+    const totalHadir = 1 + jumlahKeluarga;
+
+    if(!nama||!angkatan||!status||(status==="keluarga"&&jumlahKeluarga<1)){
+      alert("Lengkapi data");
+      return;
+    }
+
+    await push(ref(db,"absensi/"+angkatan),{
+      nama,
+      status,
+      jumlahKeluarga,
+      totalHadir,
+      waktu:new Date().toLocaleString()
+    });
+
+    await runTransaction(
+      ref(db,"rekap/"+angkatan+"/total"),
+      cur => (cur||0) + totalHadir
+    );
+
+    await set(deviceRef,true);
+
+    alert("Absensi terkirim");
+
+  } catch(error) {
+    console.error(error);
+    alert("Terjadi error. Cek console.");
+  }
+};
+
+const h=document.getElementById("h"),
+j=document.getElementById("j"),
+m=document.getElementById("m"),
+d=document.getElementById("d");
+
+const target=new Date("March 8, 2026 18:50:00").getTime();
+
+setInterval(()=>{
+  const s=target-Date.now();
+  h.innerText=Math.floor(s/86400000);
+  j.innerText=Math.floor(s%86400000/3600000);
+  m.innerText=Math.floor(s%3600000/60000);
+  d.innerText=Math.floor(s%60000/1000);
+},1000);
+</script>
+
+</body>
+</html>
